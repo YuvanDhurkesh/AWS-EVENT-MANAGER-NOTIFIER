@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Event Announcement Portal</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<h1>Event Announcement Portal</h1>
+    <h1>Event Announcement Portal</h1>
 
-<div class="container">
+    <div class="container">
 
-    <h2>Create Event</h2>
+        <h2>Create Event</h2>
 
-    <input type="text" id="title" placeholder="Event Title">
-    <input type="date" id="date">
-    <textarea id="description" placeholder="Event Description"></textarea>
+        <input type="text" id="title" placeholder="Event Title">
 
-    <button onclick="createEvent()">Create Event</button>
+        <input type="date" id="date">
 
-    <hr>
+        <textarea id="description" placeholder="Event Description"></textarea>
 
-    <h2>Subscribe</h2>
+        <button onclick="submitEvent()">Create Event</button>
 
-    <input type="email" id="email" placeholder="Enter Email">
-    <button onclick="subscribe()">Subscribe</button>
+        <hr>
 
-</div>
+        <h2>Subscribe</h2>
 
-<script src="script.js"></script>
+        <input type="email" id="email" placeholder="Enter Email">
+
+        <button onclick="subscribe()">Subscribe</button>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
