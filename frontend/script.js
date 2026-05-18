@@ -1,15 +1,19 @@
-const SUBSCRIBE_API = "YOUR API";
+const SUBSCRIBE_API = "your api";
 
-const EVENT_API = "YOUR API";
+const EVENT_API = "your api";
 
 
-async function createEvent() {
+// CREATE EVENT
+
+async function submitEvent() {
 
     const data = {
         title: document.getElementById("title").value,
         date: document.getElementById("date").value,
         description: document.getElementById("description").value
     };
+
+    console.log("Sending Event Data:", data);
 
     try {
 
@@ -23,22 +27,28 @@ async function createEvent() {
 
         const result = await response.json();
 
+        console.log("Event Response:", result);
+
         alert(result.message || result.error);
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Create Event Error:", error);
 
         alert("Create Event Failed");
     }
 }
 
 
+// SUBSCRIBE
+
 async function subscribe() {
 
     const data = {
         email: document.getElementById("email").value
     };
+
+    console.log("Sending Subscription Data:", data);
 
     try {
 
@@ -52,11 +62,13 @@ async function subscribe() {
 
         const result = await response.json();
 
+        console.log("Subscribe Response:", result);
+
         alert(result.message || result.error);
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Subscription Error:", error);
 
         alert("Subscription Failed");
     }
