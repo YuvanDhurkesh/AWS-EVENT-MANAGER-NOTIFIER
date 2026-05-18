@@ -183,17 +183,6 @@ AmazonS3FullAccess
 
 ---
 
-# Screenshots
-
-Add:
-- Architecture diagram
-- S3 website
-- API Gateway
-- Lambda functions
-- SNS Topic
-- Email notification screenshots
-
----
 
 # Future Improvements
 
