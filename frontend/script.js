@@ -1,4 +1,7 @@
-const API_BASE = "https://zbfgckfgj8.execute-api.us-east-1.amazonaws.com/prod";
+const SUBSCRIBE_API = "YOUR API";
+
+const EVENT_API = "YOUR API";
+
 
 async function createEvent() {
 
@@ -8,16 +11,28 @@ async function createEvent() {
         description: document.getElementById("description").value
     };
 
-    const response = await fetch(`${API_BASE}/new-event`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    try {
 
-    alert("Event Created!");
+        const response = await fetch(`${EVENT_API}/new-event`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        alert(result.message || result.error);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Create Event Failed");
+    }
 }
+
 
 async function subscribe() {
 
@@ -25,13 +40,24 @@ async function subscribe() {
         email: document.getElementById("email").value
     };
 
-    const response = await fetch(`${API_BASE}/subscribe`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    try {
 
-    alert("Subscribed Successfully!");
+        const response = await fetch(`${SUBSCRIBE_API}/subscribe`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        alert(result.message || result.error);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Subscription Failed");
+    }
 }
